@@ -18,12 +18,4 @@
 
 Пример: x = 0x10, y = [x] → y = 0x10
 
-**Преобразование в XML**
-
-Пример: {host: 0x7F000001} →
-<dict>
-    <entry name="host">
-        <number>2130706433</number>
-    </entry>
-</dict>
 
