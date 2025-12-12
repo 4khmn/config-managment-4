@@ -23,7 +23,7 @@ public class Main {
         NUMBER, IDENT,
         EOF
     }
-
+    // Пример: "{host: 0x10}" → [LBRACE, IDENT("host"), COLON, NUMBER("0x10"), RBRACE]
     static class Lexer {
         private final String input;
         private final int length;
@@ -220,7 +220,7 @@ public class Main {
                 }
             }
 
-            expect(Type.RBRACE);
+
             eat(Type.RBRACE);
             return new DictValue(map);
         }
@@ -228,7 +228,7 @@ public class Main {
         private void expect(Type t) { if (cur.type != t) throw new ParseException(cur.line, cur.col, "Expected " + t + " but got " + cur.type); }
         private void eat(Type t) { expect(t); cur = lex.next(); }
     }
-
+    // Пример: x = 0x10, y = [x] → y = 0x10
     static class Evaluator {
         final Map<String, Value> env;
         final Map<String, Value> evaluated = new LinkedHashMap<>();
