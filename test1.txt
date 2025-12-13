@@ -1,0 +1,8 @@
+# Тестовая конфигурация
+ip = 0x7F000001
+port = 0x1F90
+
+server = {
+    address: [ip],
+    port: [port]
+}
